@@ -4,6 +4,29 @@
   "description": "MERN boilerplate in Typescript with new state management app (React Recoil)",
   "main": "index.js",
   "author": "Daniel Kuliński",
+  "scripts": {
+    "build:front": "cd client && yarn build",
+    "build:server": "tsc",
+    "copy:front": "mkdir dist/client && cp -ri client/build dist/client/build",
+    "build:front:full": "yarn build:front && yarn copy:front",
+    "build": "yarn build:server && yarn build:front:full",
+    "start": "node dist/server",
+    "full:start": "yarn build:server && yarn start"
+  },
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "log4js": "^6.3.0",
+    "mongodb": "^3.5.9",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/express": "^4.17.7",
+    "@types/mongodb": "^3.5.25"
+  }
 }
