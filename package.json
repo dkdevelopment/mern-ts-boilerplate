@@ -1,0 +1,9 @@
+{
+  "name": "mern-ts-boilerplate",
+  "version": "0.0.1",
+  "description": "MERN boilerplate in Typescript with new state management app (React Recoil)",
+  "main": "index.js",
+  "author": "Daniel Kuliński",
+  "license": "MIT",
+  "private": false
+}
