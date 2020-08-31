@@ -8,12 +8,20 @@ export const getLogger = (moduleName: string) => {
   return logger
 }
 
-export const loggerMiddleware = (req: Request, res: Response, next: NextFunction) => {
+export const loggerMiddleware = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const log = getLogger('app-middleware')
   const start = +new Date() // maybe change it one day to process.hrtime
 
   res.on('finish', () => {
-    log.info(`[${req.method}][${res.statusCode}][${+new Date() - start}ms] - ${req.path}`)
+    log.info(
+      `[${req.method}][${res.statusCode}][${+new Date() - start}ms] - ${
+        req.path
+      }`
+    )
   })
 
   next()
